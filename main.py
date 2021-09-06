@@ -73,7 +73,7 @@ class Gracz:
         self.imie = imie
 
 
-class Game:
+class Gra:
     def __init__(self):
         imie1 = input("Gracz 1 imie :")
         imie2 = input("Gracz 2 imie :")
@@ -86,7 +86,7 @@ class Game:
         w = w.format(zwyciezca)
         print(w)
 
-    def draw(self, gracz1n, gracz1c, gracz2n, gracz2c):
+    def dobranie(self, gracz1n, gracz1c, gracz2n, gracz2c):
         d = "{} dobiera {} {} dobiera {}"
         d = d.format(gracz1n,
                      gracz1c,
@@ -94,7 +94,7 @@ class Game:
                      gracz2c)
         print(d)
 
-    def play_game(self):
+    def zagraj(self):
         Karty = self.talia.Karty
         print("Gra rozpoczeta")
         while len(Karty) >= 2:
@@ -107,7 +107,7 @@ class Game:
             gracz2c = self.talia.pozostale_karty()
             gracz1n = self.gracz1.imie
             gracz2n = self.gracz2.imie
-            self.draw(gracz1n,
+            self.dobranie(gracz1n,
                       gracz1c,
                       gracz2n,
                       gracz2c)
@@ -132,5 +132,5 @@ class Game:
             return "Remis!"
 
 
-game = Game()
-game.play_game()
+gra = Gra()
+gra.zagraj()
